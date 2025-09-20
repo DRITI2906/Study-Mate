@@ -81,7 +81,7 @@ export function QuizPanel({ text, fileName }: QuizPanelProps) {
       
       const radioGroup = document.querySelector('input[type="radio"]:checked') as HTMLInputElement;
       if (radioGroup) {
-        radioGroup.checked = false;
+        radioGroup.checked = true;
       }
     }
   }
