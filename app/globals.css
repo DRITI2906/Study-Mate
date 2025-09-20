@@ -4,19 +4,19 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(1 0 0); /* White background */
-  --foreground: oklch(0.145 0 0); /* Dark gray text */
+  --background: oklch(1 0 0); 
+  --foreground: oklch(0.145 0 0); 
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0); /* Dark primary color */
+  --primary: oklch(0.205 0 0); 
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0); /* Light secondary */
+  --secondary: oklch(0.97 0 0); 
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0); /* Light accent */
+  --accent: oklch(0.97 0 0); 
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
@@ -124,12 +124,12 @@
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
-  /* Logo color: make header icon and title blue */
+  
   .logo {
-    color: #0ea5e9; /* sky-500 / blue */
+    color: #0ea5e9; 
   }
 
-  /* Ensure SVG icons inherit the .logo color */
+ 
   .logo svg {
     fill: currentColor;
     stroke: currentColor;

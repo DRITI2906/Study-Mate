@@ -9,7 +9,7 @@ import { FileUpload } from "@/components/file-upload"
 import { SummarizationPanel } from "@/components/summarization-panel"
 import { ChatbotPanel } from "@/components/chatbot-panel"
 import { QuizPanel } from "@/components/quiz-panel"
-// Theme toggle removed from header per user's request
+
 
 export default function HomePage() {
   const [uploadedFile, setUploadedFile] = useState<File | null>(null)
@@ -24,7 +24,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
+      
       <header className="border-b bg-card">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
@@ -33,13 +33,13 @@ export default function HomePage() {
               <h1 className="text-2xl font-bold text-balance logo"> Study Mate</h1>
             </div>
             <div className="flex items-center gap-4">
-              {/* header controls removed */}
+              
             </div>
           </div>
         </div>
       </header>
 
-      {/* Main Content */}
+      
       <main className="container mx-auto px-4 py-8">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="grid w-full grid-cols-4 mb-8">
