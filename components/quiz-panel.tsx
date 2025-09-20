@@ -67,7 +67,7 @@ export function QuizPanel({ text, fileName }: QuizPanelProps) {
   const nextQuestion = () => {
     if (currentQuestionIndex < (quiz?.length || 0) - 1) {
       setCurrentQuestionIndex((prev) => prev + 1)
-      // Force radio group to reset selection
+
       const radioGroup = document.querySelector('input[type="radio"]:checked') as HTMLInputElement;
       if (radioGroup) {
         radioGroup.checked = false;
@@ -78,7 +78,7 @@ export function QuizPanel({ text, fileName }: QuizPanelProps) {
   const previousQuestion = () => {
     if (currentQuestionIndex > 0) {
       setCurrentQuestionIndex((prev) => prev - 1)
-      // Force radio group to reset selection
+      
       const radioGroup = document.querySelector('input[type="radio"]:checked') as HTMLInputElement;
       if (radioGroup) {
         radioGroup.checked = false;
@@ -217,7 +217,7 @@ export function QuizPanel({ text, fileName }: QuizPanelProps) {
                 <h3 className="text-lg font-semibold leading-relaxed text-center">{currentQuestion.question}</h3>
 
                 <RadioGroup
-                  key={`question-${currentQuestionIndex}`} // Force re-render on question change
+                  key={`question-${currentQuestionIndex}`}
                   value={showResults ? selectedAnswers[currentQuestionIndex]?.toString() : undefined}
                   onValueChange={(value) => handleAnswerSelect(currentQuestionIndex, Number.parseInt(value))}
                 >

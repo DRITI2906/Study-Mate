@@ -54,7 +54,7 @@ export function FileUpload({ onFileUpload }: FileUploadProps) {
     disabled: isProcessing,
   })
 
-  // Minimal upload UI: only show choose button and format instruction (no inner card)
+
   return (
     <div className="space-y-4">
       <div className={`${isProcessing ? "opacity-50 cursor-not-allowed" : ""} px-6 py-8`}>
@@ -72,7 +72,7 @@ export function FileUpload({ onFileUpload }: FileUploadProps) {
         ) : (
           <div className="flex flex-col items-center justify-center gap-2 text-center">
             <Button className="mt-2 bg-sky-500 text-white hover:bg-sky-600" onClick={() => {
-              // Trigger the hidden file input click
+              
               const input = document.querySelector<HTMLInputElement>('input[type="file"]')
               input?.click()
             }}>

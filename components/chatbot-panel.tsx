@@ -62,7 +62,6 @@ export function ChatbotPanel({ text, fileName }: ChatbotPanelProps) {
     setInputValue("")
     setIsTyping(true)
 
-    // Create a temporary message for the assistant response
     const assistantMessageId = (Date.now() + 1).toString();
     const assistantMessage: Message = {
       id: assistantMessageId,
@@ -77,7 +76,6 @@ export function ChatbotPanel({ text, fileName }: ChatbotPanelProps) {
         await api.sendChatMessageStream(
           currentInput, 
           text,
-          // On chunk received
           (chunk: string) => {
             setMessages((prev) => prev.map(msg => 
               msg.id === assistantMessageId 
@@ -85,11 +83,9 @@ export function ChatbotPanel({ text, fileName }: ChatbotPanelProps) {
                 : msg
             ))
           },
-          // On completion
           () => {
             setIsTyping(false)
           },
-          // On error
           (error: string) => {
             setMessages((prev) => prev.map(msg => 
               msg.id === assistantMessageId 
@@ -101,7 +97,6 @@ export function ChatbotPanel({ text, fileName }: ChatbotPanelProps) {
           }
         )
       } else {
-        // Use regular non-streaming API
         const response = await api.sendChatMessage(currentInput, text)
         setMessages((prev) => prev.map(msg => 
           msg.id === assistantMessageId 
@@ -165,7 +160,6 @@ export function ChatbotPanel({ text, fileName }: ChatbotPanelProps) {
 
       <div className="h-[600px] flex flex-col bg-background rounded-lg">
         <div className="flex-1 flex flex-col p-0">
-          {/* Messages with scrollable area */}
           <ScrollArea className="flex-1 p-6" ref={scrollAreaRef}>
             <div className="space-y-4">
               {messages.map((message) => (
@@ -236,7 +230,7 @@ export function ChatbotPanel({ text, fileName }: ChatbotPanelProps) {
             </div>
           </ScrollArea>
 
-          {/* Input - Fixed to bottom */}
+
           <div className="sticky bottom-0 bg-background border-t p-4">
             <div className="flex gap-2 w-full">
               <Input
