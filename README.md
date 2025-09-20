@@ -35,7 +35,7 @@ It is a sophisticated learning companion designed to streamline the process of u
 
 🌐 Live : https://study-mate-murex.vercel.app 
 
-## How to Use HealthAI locally 
+## How to Use Study-Mate locally 
 
 1. **Clone the Repository**:
 
