@@ -74,6 +74,7 @@ Traditional study methods make it difficult to quickly grasp key concepts, retai
 - **🎯 Focused Revision** – Highlight key concepts for better retention.
 - **🌐 Seamless Experience** – Simple UI, PDF support, and cross-platform access.
 - **🤖 AI-Powered** – Smart, adaptive, and designed to enhance learning efficiency.
+- **📲 Responsive UI** - works seamlessly across desktops, tablets, and mobile devices.
 
 ## 📸 ScreenShots
 
