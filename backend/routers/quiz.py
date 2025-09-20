@@ -15,13 +15,13 @@ async def generate_quiz(request: QuizRequest):
         quiz = await quiz_service.generate_quiz(request.text, request.num_questions)
         return quiz
     except ValueError as e:
-        # Handle validation errors
+        
         raise HTTPException(status_code=400, detail=str(e))
     except json.JSONDecodeError as e:
-        # Handle JSON parsing errors
+       
         raise HTTPException(status_code=500, detail="Failed to generate quiz: Invalid response format")
     except Exception as e:
-        # Log unexpected errors
+        
         print(f"Error generating quiz: {str(e)}")
         raise HTTPException(
             status_code=500, 

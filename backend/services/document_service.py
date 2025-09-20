@@ -69,7 +69,7 @@ class DocumentService:
         try:
             response = await self.gemini.generate_structured_text(prompt, format_instructions)
             
-            # Process the response to extract quick notes and key takeaways
+           
             parts = response.split("Key Takeaways:")
             if len(parts) != 2:
                 raise ValueError("Invalid response format from AI")

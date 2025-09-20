@@ -19,10 +19,11 @@ async def summarize_text(request: SummarizeRequest):
         summary = await document_service.generate_summary(request.text)
         return summary
     except ValueError as e:
-        # Handle known validation errors with 400 status code
+
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
-        # Log unexpected errors for debugging
+        
+        
         print(f"Unexpected error in summarize_text: {str(e)}")
         raise HTTPException(
             status_code=500, 

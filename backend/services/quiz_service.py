@@ -7,7 +7,7 @@ from models.quiz import Quiz, Question, AnswerResult
 class QuizService:
     def __init__(self):
         self.gemini = GeminiService()
-        self.quizzes = {}  # In-memory storage, replace with database in production
+        self.quizzes = {}  # In-memory storage
 
     async def generate_quiz(self, text: str, num_questions: int) -> Quiz:
         if not text or len(text.strip()) < 50:
@@ -39,12 +39,12 @@ class QuizService:
             if not response:
                 raise ValueError("No response received from AI model")
 
-            # Try to extract JSON from the response if it's embedded in text
+        
             try:
-                # First try direct JSON parsing
+               
                 questions_data = json.loads(response)
             except json.JSONDecodeError:
-                # If that fails, try to find a JSON array in the response
+                
                 import re
                 json_match = re.search(r'\[\s*{[^}]*}(?:\s*,\s*{[^}]*})*\s*\]', response)
                 if not json_match:
@@ -57,17 +57,17 @@ class QuizService:
 
             questions = []
             for i, q_data in enumerate(questions_data):
-                # Validate required fields
+               
                 required_fields = ["question", "options", "correctAnswer", "explanation"]
                 missing_fields = [f for f in required_fields if f not in q_data]
                 if missing_fields:
                     raise ValueError(f"Question {i+1} is missing required fields: {missing_fields}")
 
-                # Validate options array
+               
                 if not isinstance(q_data["options"], list) or len(q_data["options"]) != 4:
                     raise ValueError(f"Question {i+1} must have exactly 4 options")
 
-                # Validate correctAnswer
+                
                 if not isinstance(q_data["correctAnswer"], int) or not (0 <= q_data["correctAnswer"] <= 3):
                     raise ValueError(f"Question {i+1} has invalid correctAnswer (must be 0-3)")
 
