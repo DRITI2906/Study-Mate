@@ -40,8 +40,8 @@ It is a sophisticated learning companion designed to streamline the process of u
 1. **Clone the Repository**:
 
    ```bash
-  git clone https://github.com/DRITI2906/Study-Mate.git
-  cd Study-Mate
+   git clone https://github.com/DRITI2906/Study-Mate.git
+   cd Study-Mate
    ```
 
 2. **Setup Backend**:
@@ -50,8 +50,8 @@ It is a sophisticated learning companion designed to streamline the process of u
    cd backend
    # create .env file and add this things in it 
    # GEMINI_API_KEY=your_key
-   #CORS_ORIGINS=http://localhost:3000
-   #MODEL_NAME=gemini-2.5-flash
+   # CORS_ORIGINS= (http://localhost:3000)
+   # MODEL_NAME= (gemini-2.5-flash)
    python -m venv venv
    .\venv\Scripts\activate     
    pip install -r requirements.txt
