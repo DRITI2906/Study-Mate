@@ -8,7 +8,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "AI Study Assistant - Smart Learning Companion",
+  title: "Study Mate - Smart Learning Companion",
   description: "Upload PDFs, get AI-powered summaries, chat with your documents, and generate practice quizzes",
   generator: "v0.app",
 }
